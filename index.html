@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPTV Player Smart TV</title>
+    <!-- Enlace a la carpeta css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Librería para reproducir HLS (.m3u8) -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+
+    <!-- PANTALLA 1: Ingreso de URL -->
+    <div id="login-panel" class="panel">
+        <h1>Ingresa tu Playlist</h1>
+        <input type="text" id="url-input" class="tv-focusable" placeholder="http://ip:puerto/playlist.m3u8?auth=user:pass">
+        <button id="btn-save-play" class="tv-focusable">Guardar URL y Reproducir</button>
+    </div>
+
+    <!-- PANTALLA 2: Reproductor y Canales -->
+    <div id="player-panel" class="panel hidden">
+        <!-- Reproductor de Video (Sin controles para evitar pausas) -->
+        <video id="video-player" autoplay></video>
+        
+        <!-- OSD para el nombre del canal -->
+        <div id="osd-channel-name" class="osd-hidden"></div>
+        
+        <!-- Botón 3 puntos (Opciones) -->
+        <div id="options-menu">
+            <button id="btn-dots" class="tv-focusable">⋮</button>
+            <div id="dropdown-menu" class="hidden">
+                <button id="btn-show-channels" class="tv-focusable hidden-focus">Ver Canales</button>
+                <button id="btn-new-url" class="tv-focusable hidden-focus">Cargar Nueva URL</button>
+            </div>
+        </div>
+
+        <!-- Lista de Canales -->
+        <div id="channel-list-container" class="hidden">
+            <h3>Canales</h3>
+            <ul id="channel-list"></ul>
+        </div>
+    </div>
+
+    <!-- Enlace al archivo principal de JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>

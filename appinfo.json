@@ -1,0 +1,9 @@
+{
+    "id": "spepsoft.com.co",
+    "version": "1.0.0",
+    "vendor": "JUAN ANDRES",
+    "type": "web",
+    "main": "index.html",
+    "title": "IPTV Player",
+    "icon": "icon.png"
+}
